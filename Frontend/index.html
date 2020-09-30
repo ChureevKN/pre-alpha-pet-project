@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+		<link rel="stylesheet" href="style.css">
+		<title>
+			Страница первая
+		</title>
+	</head>
+	
+	
+	
+	<body onload="set_default_background_for_audience_cells()">
+		<div class=authors_select_div>
+			<p class=small_caption_p>Пользователь</p>
+			<select name="authors_select" multiple class=authors_select>
+				<option selected value="opt_1">Автор 1</option>
+				<option value="opt_2">Автор 2</option>
+			</select>
+		</div>
+		
+		
+		
+		<div class=lists_select_div>
+			<p class=small_caption_p>Список</p>
+			<select name="lists_select" multiple class=lists_select>
+				<option selected value="opt_1">Список 1</option>
+				<option value="opt_2">Список 2</option>
+			</select>
+		</div>
+		
+		
+		
+		<!--"zeroise_allowances_td" IDs are used in JS ("var mentioned_user_name"), using substring
+			from 9 symbol, after word "audience". Changing the occurance of these IDs demands
+			changing script behavior.-->
+			
+		<div class=audience_table_with_adding_button_div>
+			<p class=small_caption_p>Доступ к списку</p>
+			<div class=audience_table_div>
+				<table name="audience_table" cols=5 class=audience_table>
+					<tr>
+						<th class=audience_table_user_caption>Имя пользователя</th>
+						<th class=audience_table_td><nobr><span class=audience_table_th_initial>&nbsp;R</span><span class=audience_table_th_rest>ead&nbsp;</span></nobr></th>
+						<th class=audience_table_td><span class=audience_table_th_initial>M</span><span class=audience_table_th_rest>odify</span></th>
+						<th class=audience_table_td><span class=audience_table_th_initial>D</span><span class=audience_table_th_rest>elete</span></th>
+						<th class="audience_table_td audience_user_delete_caption">   Удалить   </th>
+					</tr>
+					<tr>
+						<td class=allowance_user_name_td><div class=allowance_user_name_div id="audience_user_name_div_User1">User1</div></td>
+						<td class=allowance_clickable_switcher id="audience_User1_allowance_read" onClick="switch_value(this.id)"><nobr><span class=audience_table_th_initial>R</span><span class=audience_table_th_rest>ead</span></nobr></td>
+						<td class=allowance_clickable_switcher id="audience_User1_allowance_modify" onClick="switch_value(this.id)"><span class=audience_table_th_initial>M</span><span class=audience_table_th_rest>odify</span></td>
+						<td class=allowance_clickable_switcher id="audience_User1_allowance_delete" onClick="switch_value(this.id)"><span class=audience_table_th_initial>D</span><span class=audience_table_th_rest>elete</span></td>
+						<td class=zeroise_allowances_td><input type="button" value="Удалить" class=zeroise_allowances_button id="audience_User1_zeroise_allowances_button" onClick="zeroise_allowances(this.id)"></td>
+					</tr>
+					<tr>
+						<td class=allowance_user_name_td><div class=allowance_user_name_div id="audience_user_name_div_User2">Второй пользовательВторой пользовательВторой пользовательВторой пользовательВторой пользовательВторой пользовательВторой пользовательВторой пользователь</div></td>
+						<td class=allowance_clickable_switcher id="audience_User2_allowance_read" onClick="switch_value(this.id)"><nobr><span class=audience_table_th_initial>R</span><span class=audience_table_th_rest>ead</span></nobr></td>
+						<td class=allowance_clickable_switcher id="audience_User2_allowance_modify" onClick="switch_value(this.id)"><span class=audience_table_th_initial>M</span><span class=audience_table_th_rest>odify</span></td>
+						<td class=allowance_clickable_switcher id="audience_User2_allowance_delete" onClick="switch_value(this.id)"><span class=audience_table_th_initial>D</span><span class=audience_table_th_rest>elete</span></td>
+						<td class=zeroise_allowances_td><input type="button" value="Удалить" class=zeroise_allowances_button id="audience_User2_zeroise_allowances_button" onClick="zeroise_allowances(this.id)"></td>
+					</tr>
+					<tr>
+						<td class=allowance_user_name_td><div class=allowance_user_name_div id="audience_user_name_div_User3">Третий пользователь</div></td>
+						<td class=allowance_clickable_switcher id="audience_User3_allowance_read" onClick="switch_value(this.id)"><nobr><span class=audience_table_th_initial>R</span><span class=audience_table_th_rest>ead</span></nobr></td>
+						<td class=allowance_clickable_switcher id="audience_User3_allowance_modify" onClick="switch_value(this.id)"><span class=audience_table_th_initial>M</span><span class=audience_table_th_rest>odify</span></td>
+						<td class=allowance_clickable_switcher id="audience_User3_allowance_delete" onClick="switch_value(this.id)"><span class=audience_table_th_initial>D</span><span class=audience_table_th_rest>elete</span></td>
+						<td class=zeroise_allowances_td><input type="button" value="Удалить" class=zeroise_allowances_button id="audience_User3_zeroise_allowances_button" onClick="zeroise_allowances(this.id)"></td>
+					</tr>
+					<tr>
+						<td class=allowance_user_name_td><div class=allowance_user_name_div id="audience_user_name_div_User4">Четвертый пользователь</div></td>
+						<td class=allowance_clickable_switcher id="audience_User4_allowance_read" onClick="switch_value(this.id)"><nobr><span class=audience_table_th_initial>R</span><span class=audience_table_th_rest>ead</span></nobr></td>
+						<td class=allowance_clickable_switcher id="audience_User4_allowance_modify" onClick="switch_value(this.id)"><span class=audience_table_th_initial>M</span><span class=audience_table_th_rest>odify</span></td>
+						<td class=allowance_clickable_switcher id="audience_User4_allowance_delete" onClick="switch_value(this.id)"><span class=audience_table_th_initial>D</span><span class=audience_table_th_rest>elete</span></td>
+						<td class=zeroise_allowances_td><input type="button" value="Удалить" class=zeroise_allowances_button id="audience_User4_zeroise_allowances_button" onClick="zeroise_allowances(this.id)"></td>
+					</tr>
+					<tr>
+						<td class=allowance_user_name_td><div class=allowance_user_name_div id="audience_user_name_div_User5">Ещё один пользователь</div></td>
+						<td class=allowance_clickable_switcher id="audience_User5_allowance_read" onClick="switch_value(this.id)"><nobr><span class=audience_table_th_initial>R</span><span class=audience_table_th_rest>ead</span></nobr></td>
+						<td class=allowance_clickable_switcher id="audience_User5_allowance_modify" onClick="switch_value(this.id)"><span class=audience_table_th_initial>M</span><span class=audience_table_th_rest>odify</span></td>
+						<td class=allowance_clickable_switcher id="audience_User5_allowance_delete" onClick="switch_value(this.id)"><span class=audience_table_th_initial>D</span><span class=audience_table_th_rest>elete</span></td>
+						<td class=zeroise_allowances_td><input type="button" value="Удалить" class=zeroise_allowances_button id="audience_User5_zeroise_allowances_button" onClick="zeroise_allowances(this.id)"></td>
+					</tr>
+					<tr>
+						<td class=allowance_user_name_td><div class=allowance_user_name_div id="audience_user_name_div_User6">Последний пользователь, с длинным названием</div></td>
+						<td class=allowance_clickable_switcher id="audience_User6_allowance_read" onClick="switch_value(this.id)"><nobr><span class=audience_table_th_initial>R</span><span class=audience_table_th_rest>ead</span></nobr></td>
+						<td class=allowance_clickable_switcher id="audience_User6_allowance_modify" onClick="switch_value(this.id)"><span class=audience_table_th_initial>M</span><span class=audience_table_th_rest>odify</span></td>
+						<td class=allowance_clickable_switcher id="audience_User6_allowance_delete" onClick="switch_value(this.id)"><span class=audience_table_th_initial>D</span><span class=audience_table_th_rest>elete</span></td>
+						<td class=zeroise_allowances_td><input type="button" value="Удалить" class=zeroise_allowances_button id="audience_User6_zeroise_allowances_button" onClick="zeroise_allowances(this.id)"></td>
+					</tr>
+				</table>
+			</div>
+			<input type="button" value="Добавить пользователя" align="center" class=add_user_button>
+		</div>
+		
+		
+		
+		<hr class=line___that_one_that_divides___screen_areas></hr>
+		
+		
+		
+		<div class=shopping_list_table_with_caption_div>
+			<p class=small_caption_p>Просмотр выбранного списка</p>
+			<div class=shopping_list_table_div>
+				<table name="shopping_list_table" cols=2 rules=rows cellpadding=5 frame=hsides border=1 class=shopping_list_table>
+					<tr>
+						<th class=small_caption_th>Наименование товара</th>
+						<th class=small_caption_th>Количество</th>
+					</tr>
+					<tr align="center"><td>Апельсины</td><td>6</td></tr>
+					<tr align="center"><td>Мандарины</td><td>12</td></tr>
+					<tr align="center"><td>Картофель</td><td>5 кг</td></tr>
+				</table>
+			</div>
+		</div>
+		<script defer type="text/javascript" src="javascript.js"></script>
+	</body>
+	
+	
+	
+	
+	<footer>
+		<hr>
+		Чуреев Кирилл Николаевич
+	</footer>
+</html>
